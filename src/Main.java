@@ -75,19 +75,20 @@ public class Main {
             }
 
         }while (flag);
+        if(counter != 0) {
+            System.out.println("\n************* \nTotal item ordered" +
+                    "\n*************");
+            for (int i = 0; i < counter; i++) {
+                total = total + items[i].getPrice();
+                System.out.println(items[i]);
+            }
+            System.out.println("\n*************\n\n" +
+                    "Total = $" + total);
 
-        System.out.println("\n************* \nTotal item ordered" +
-                "\n*************");
-        for (int i = 0; i< counter; i++){
-            total = total + items[i].getPrice();
-            System.out.println(items[i]);
+            System.out.println("Proceeding Payment");
+
+            authorizePayment(total, sc);
         }
-        System.out.println("\n*************\n\n" +
-                "Total = $"+ total);
-
-        System.out.println("Proceeding Payment");
-
-        authorizePayment(total, sc);
 
 
 
